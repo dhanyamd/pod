@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-const manrope = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Podcastr",
+  title: "Pod",
   description: "Generate your podcasts using AI",
   icons: {
     icon: '/icons/logo.svg'
@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
       <html lang="en">  
-          <body className={`${manrope.className}`}>
+          <body className={`${inter.className}`}>
               {children}
           </body>
       </html>
