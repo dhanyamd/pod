@@ -71,7 +71,7 @@ const CreatePocast = () => {
             <FormItem className="flex flex-col gap-2.5">
               <FormLabel className="text-16 font-bold text-white-1">Title</FormLabel>
               <FormControl>
-                <Input className="input-class focus-visible:ring-lime-400" placeholder="Pod" {...field} />
+                <Input className="input-class focus-visible:ring-lime-300" placeholder="Pod" {...field} />
               </FormControl>
               <FormDescription>
                 This is your public display name.
@@ -86,12 +86,12 @@ const CreatePocast = () => {
           Select your AI voice
         </Label>
         <Select onValueChange={(value) => setVoiceType(value)}>
-                <SelectTrigger className={cn('text-16 w-full border-none bg-black-1 text-gray-1 focus-visible:ring-offset-lime-500')}>
+                <SelectTrigger className={cn('text-16 w-full border-none bg-black-1 text-gray-1 focus-visible:ring-offset-lime-400')}>
                   <SelectValue placeholder="Select AI Voice" className="placeholder:text-gray-1 " />
                 </SelectTrigger>
-                <SelectContent className="text-16 border-none bg-black-1 font-bold text-white-1 focus:bg-lime-500">
+                <SelectContent className="text-16 border-none bg-black-1 font-bold text-white-1 focus:bg-lime-400">
                 {voiceCategories.map((category) => (
-                    <SelectItem key={category} value={category} className="capitalize focus:bg-lime-500">
+                    <SelectItem key={category} value={category} className="capitalize focus:bg-lime-400">
                       {category}
                     </SelectItem>
                   ))}
@@ -112,7 +112,7 @@ const CreatePocast = () => {
                 <FormItem className="flex flex-col gap-2.5">
                   <FormLabel className="text-16 font-bold text-white-1">Description</FormLabel>
                   <FormControl>
-                    <Textarea className="input-class focus-visible:ring-offset-orange-1" placeholder="Write a short podcast description" {...field} />
+                    <Textarea className="input-class focus-visible:ring-offset-lime-400" placeholder="Write a short podcast description" {...field} />
                   </FormControl>
                   <FormMessage className="text-white-1" />
                 </FormItem>
@@ -133,7 +133,7 @@ const CreatePocast = () => {
         </div>
         <div className="mt-10 w-full">
          <Button type="submit" className="text-16 w-full bg-lime-400 py-4 font-extrabold
-          text-white-1 transition-all duration-500 hover:bg-black-1">
+          text-white-2 transition-all duration-500 hover:bg-black-1">
             {isSubmitting ? (
                     <>
                       Submitting
