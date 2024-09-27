@@ -62,7 +62,7 @@ const CreatePocast = () => {
     <section className="mt-10 flex flex-col">
       <h1 className="text-20 font-bold text-white-1">Create Podcasts</h1>
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className=" space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="mt-12 space-y-8">
         <div className="flex flex-col gap-[30px] border-b border-black-5 pb-10">
         <FormField
           control={form.control}
@@ -121,19 +121,19 @@ const CreatePocast = () => {
         </div>
         <div className="flex flex-col pb-10">
         <GeneratePodcast 
-        setAudioStorageId={setAudioStorageId}
-        setAudio={setAudioUrl}
-        voiceType={voiceType!}
-        audio={audioUrl}
-        voicePrompt={voicePrompt}
-        setVoicePrompt={setVoicePrompt}
-        setAudioDuration={setAudioDuration}
-        />
+                setAudioStorageId={setAudioStorageId}
+                setAudio={setAudioUrl}
+                voiceType={voiceType!}
+                audio={audioUrl}
+                voicePrompt={voicePrompt}
+                setVoicePrompt={setVoicePrompt}
+                setAudioDuration={setAudioDuration}
+              />
         <GenerateThumbnail/>
         </div>
         <div className="mt-10 w-full">
          <Button type="submit" className="text-16 w-full bg-lime-400 py-4 font-extrabold
-          text-white-2 transition-all duration-500 hover:bg-black-1">
+          text-white-2 transition-all duration-500 hover:bg-black-1" >
             {isSubmitting ? (
                     <>
                       Submitting
