@@ -17,6 +17,10 @@ const nextConfig = {
           protocol: 'https',
           hostname: 'img.clerk.com'
         },
+        {
+          protocol : 'https',
+          hostname : "brave-bear-457.convex.cloud"
+        }
       ]
     }
   };
