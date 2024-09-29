@@ -18,9 +18,8 @@ import type {
 import type * as files from "../files.js";
 import type * as http from "../http.js";
 import type * as podcasts from "../podcasts.js";
-import type * as schemas from "../schemas.js";
 import type * as tasks from "../tasks.js";
-import type * as user from "../user.js";
+import type * as users from "../users.js";
 
 /**
  * A utility for referencing Convex functions in your app's API.
@@ -34,9 +33,8 @@ declare const fullApi: ApiFromModules<{
   files: typeof files;
   http: typeof http;
   podcasts: typeof podcasts;
-  schemas: typeof schemas;
   tasks: typeof tasks;
-  user: typeof user;
+  users: typeof users;
 }>;
 export declare const api: FilterApi<
   typeof fullApi,
