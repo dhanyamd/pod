@@ -69,6 +69,7 @@ export const createUser = internalMutation({
       clerkId: v.string(),
       imageUrl: v.string(),
       email: v.string(),
+      name : v.string()
     },
     async handler(ctx, args) {
       const user = await ctx.db
