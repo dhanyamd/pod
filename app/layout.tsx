@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ConvexClerkProvider from "./provider/ConvexClerkProvider";
+import AudioProvider from "./provider/AudioProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,12 +20,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <html lang="en">  
-          <body className={`${inter.className}`}>
-            <ConvexClerkProvider>
+    <ConvexClerkProvider>
+    <html lang="en">
+      <AudioProvider>
+        <body className={`${inter.className}`}>
             {children}
-            </ConvexClerkProvider>
-          </body>
-      </html>
+        </body>
+      </AudioProvider>
+    </html>
+  </ConvexClerkProvider>
   );
 }

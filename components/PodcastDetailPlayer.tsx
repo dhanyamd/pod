@@ -11,6 +11,7 @@ import LoaderSpinner from "./LoaderSpinner";
 import { Button } from "./ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { useAudio } from "@/app/provider/AudioProvider";
+import { useUser } from "@clerk/nextjs";
 
 const PodcastDetailPlayer = ({
   audioUrl,
@@ -24,8 +25,9 @@ const PodcastDetailPlayer = ({
   authorImageUrl,
   authorId,
 }: PodcastDetailPlayerProps) => {
+  const {user} = useUser()
   const router = useRouter();
-  //const { setAudio } = useAudio();
+  const { setAudio } = useAudio();
   const { toast } = useToast();
   const [isDeleting, setIsDeleting] = useState(false);
   const deletePodcast = useMutation(api.podcasts.deletePodcast);
@@ -46,7 +48,7 @@ const PodcastDetailPlayer = ({
     }
   };
 
-  /*const handlePlay = () => {
+  const handlePlay = () => {
     setAudio({
       title: podcastTitle,
       audioUrl,
@@ -54,7 +56,7 @@ const PodcastDetailPlayer = ({
       author,
       podcastId,
     });
-  };*/
+  };
 
   if (!imageUrl || !authorImageUrl) return <LoaderSpinner />;
 
@@ -91,7 +93,7 @@ const PodcastDetailPlayer = ({
           </article>
 
           <Button
-          //  onClick={handlePlay}
+            onClick={handlePlay}
             className="text-16 w-full max-w-[250px] bg-lime-400 font-extrabold text-white-1"
           >
             <Image
@@ -104,13 +106,14 @@ const PodcastDetailPlayer = ({
           </Button>
         </div>
       </div>
+    
       {isOwner && (
         <div className="relative mt-2">
           <Image
             src="/icons/three-dots.svg"
             width={20}
             height={30}
-            alt="Three dots icon"
+            alt="Three"
             className="cursor-pointer"
             onClick={() => setIsDeleting((prev) => !prev)}
           />
@@ -129,7 +132,8 @@ const PodcastDetailPlayer = ({
             </div>
           )}
         </div>
-      )}
+    
+        )}
     </div>
   );
 };
