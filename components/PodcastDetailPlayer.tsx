@@ -110,7 +110,7 @@ const PodcastDetailPlayer = ({
       {isOwner && (
         <div className="relative mt-2">
           <Image
-            src="/icons/three-dots.svg"
+            src="/icons/three-dot.svg"
             width={20}
             height={30}
             alt="Three"
