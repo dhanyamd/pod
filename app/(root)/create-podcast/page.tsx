@@ -73,13 +73,13 @@ const CreatePodcast = () => {
   async function onSubmit(data: z.infer<typeof formSchema>) {
     try {
       setIsSubmitting(true);
-      /*if(!audioUrl || !imageUrl || !voiceType) {
+      if(!audioUrl || !imageUrl || !voiceType) {
         toast({
           title: 'Please generate audio and image',
         })
         setIsSubmitting(false);
         throw new Error('Please generate audio and image')
-      }*/
+      }
 
       const podcast = await createdPodcast({
         podcastTitle: data.podcastTitle,
@@ -121,7 +121,7 @@ const CreatePodcast = () => {
                 <FormItem className="flex flex-col gap-2.5">
                   <FormLabel className="text-16 font-bold text-white-1">Title</FormLabel>
                   <FormControl>
-                    <Input className="input-class focus-visible:ring-offset-orange-1" placeholder="JSM Pro Podcast" {...field} />
+                    <Input className="input-class focus-visible:ring-offset-lime-400" placeholder="JSM Pro Podcast" {...field} />
                   </FormControl>
                   <FormMessage className="text-white-1" />
                 </FormItem>
@@ -161,7 +161,7 @@ const CreatePodcast = () => {
                 <FormItem className="flex flex-col gap-2.5">
                   <FormLabel className="text-16 font-bold text-white-1">Description</FormLabel>
                   <FormControl>
-                    <Textarea className="input-class focus-visible:ring-offset-orange-1" placeholder="Write a short podcast description" {...field} />
+                    <Textarea className="input-class focus-visible:ring-offset-lime-400" placeholder="Write a short podcast description" {...field} />
                   </FormControl>
                   <FormMessage className="text-white-1" />
                 </FormItem>
@@ -188,7 +188,7 @@ const CreatePodcast = () => {
               />
 
               <div className="mt-10 w-full">
-                <Button type="submit" className="text-16 w-full bg-orange-1 py-4 font-extrabold text-white-1 transition-all duration-500 hover:bg-black-1">
+                <Button type="submit" className="text-16 w-full bg-lime-400 py-4 font-extrabold text-white-1 transition-all duration-500 hover:bg-black-1">
                   {isSubmitting ? (
                     <>
                       Submitting
