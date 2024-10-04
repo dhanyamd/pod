@@ -1,4 +1,5 @@
 import MobileNav from "@/components/MobileNav";
+import PodcastPlayer from "@/components/PodcastPlayer";
 import RightSidebar from "@/components/RightSidebar";
 import SideBar from "@/components/SideBar";
 import { Toaster } from "@/components/ui/toaster";
@@ -27,6 +28,7 @@ export default function RootLayout({
        </section>
        <RightSidebar/>
         </main>
+        <PodcastPlayer />
     </div>
   );
 }

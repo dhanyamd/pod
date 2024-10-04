@@ -9,9 +9,8 @@ import { PodcastDetailPlayerProps } from "@/types";
 
 import LoaderSpinner from "./LoaderSpinner";
 import { Button } from "./ui/button";
+import { useAudio } from "@/provider/AudioProvider";
 import { useToast } from "@/hooks/use-toast";
-import { useAudio } from "@/app/provider/AudioProvider";
-import { useUser } from "@clerk/nextjs";
 
 const PodcastDetailPlayer = ({
   audioUrl,
@@ -25,7 +24,6 @@ const PodcastDetailPlayer = ({
   authorImageUrl,
   authorId,
 }: PodcastDetailPlayerProps) => {
-  const {user} = useUser()
   const router = useRouter();
   const { setAudio } = useAudio();
   const { toast } = useToast();
@@ -106,14 +104,13 @@ const PodcastDetailPlayer = ({
           </Button>
         </div>
       </div>
-    
       {isOwner && (
         <div className="relative mt-2">
           <Image
-            src="/icons/three-dot.svg"
+            src="/icons/three-dots.svg"
             width={20}
             height={30}
-            alt="Three"
+            alt="Three dots icon"
             className="cursor-pointer"
             onClick={() => setIsDeleting((prev) => !prev)}
           />
@@ -132,8 +129,7 @@ const PodcastDetailPlayer = ({
             </div>
           )}
         </div>
-    
-        )}
+      )}
     </div>
   );
 };
