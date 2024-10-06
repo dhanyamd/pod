@@ -1,3 +1,7 @@
+// ===== reference links =====
+// https://www.convex.dev/templates (open the link and choose for clerk than you will get the github link mentioned below)
+// https://github.dev/webdevcody/thumbnail-critique/blob/6637671d72513cfe13d00cb7a2990b23801eb327/convex/schema.ts
+
 import type { WebhookEvent } from "@clerk/nextjs/server";
 import { httpRouter } from "convex/server";
 import { Webhook } from "svix";
@@ -21,10 +25,10 @@ const handleClerkWebhook = httpAction(async (ctx, request) => {
       break;
     case "user.updated":
       await ctx.runMutation(internal.users.updateUser, {
-        clerkId: event.data.id,
-        imageUrl: event.data.image_url,
-        email: event.data.email_addresses[0].email_address,
-        name : event.data.first_name!
+          clerkId: event.data.id,
+          imageUrl: event.data.image_url,
+          email: event.data.email_addresses[0].email_address
+         // name : event.data.first_name!
       });
       break;
     case "user.deleted":
@@ -49,7 +53,7 @@ http.route({
 const validateRequest = async (
   req: Request
 ): Promise<WebhookEvent | undefined> => {
-  const webhookSecret = process.env.CLERK_WEBHOOK_SECRET;
+  const webhookSecret = process.env.CLERK_WEBHOOK_SECRET!;
   if (!webhookSecret) {
     throw new Error("CLERK_WEBHOOK_SECRET is not defined");
   }
