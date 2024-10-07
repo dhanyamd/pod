@@ -9,7 +9,6 @@ import Carousel from './Carousel';
 import { useQuery } from 'convex/react';
 import { api } from '@/convex/_generated/api';
 import { useRouter } from 'next/navigation';
-import LoaderSpinner from './LoaderSpinner';
 import { cn } from '@/lib/utils';
 import { useAudio } from '@/provider/AudioProvider';
 
@@ -19,9 +18,7 @@ const RightSidebar = () => {
   const router = useRouter();
 
   const { audio } = useAudio();
-  if(!audio || !user){
-    return <LoaderSpinner/>
-  }
+ 
 
   return (
     <section className={cn('right_sidebar h-[calc(100vh-5px)]', {
