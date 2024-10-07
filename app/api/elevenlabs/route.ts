@@ -31,8 +31,8 @@ export const POST = async (request: Request) => {
             'Content-Disposition': 'attachment; filename="audio.mp3"',
         },
         });
-    } catch (error: any) {
+    } catch (error : unknown) {
         console.log("ERROR : ", error)
-        return NextResponse.json({ error: error.message })
+        return NextResponse.json({ error: error })
     }
 }

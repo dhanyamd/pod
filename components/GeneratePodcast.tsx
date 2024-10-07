@@ -4,10 +4,9 @@ import React, { useState } from 'react'
 import { Textarea } from './ui/textarea'
 import { Button } from './ui/button'
 import { Loader } from 'lucide-react'
-import { useAction, useMutation } from 'convex/react'
+import {  useMutation } from 'convex/react'
 import { api } from '@/convex/_generated/api'
 import {v4 as uuidv4} from "uuid"
-import { generateUploadUrl } from '@/convex/files'
 import { useUploadFiles } from '@xixixao/uploadstuff/react'; 
 import { useToast } from '@/hooks/use-toast'
 

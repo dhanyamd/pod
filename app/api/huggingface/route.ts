@@ -1,6 +1,4 @@
 import { NextResponse } from "next/server";
-import {ElevenLabsClient} from "elevenlabs";
-import { Readable } from "stream";
 
 export const POST = async (request: Request) => {
     try{
@@ -36,8 +34,8 @@ export const POST = async (request: Request) => {
           },
           status: 200,
         });
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.log("ERROR : ", error)
-        return NextResponse.json({ error: error.message })
+        return NextResponse.json({ error: error })
     }
 }
