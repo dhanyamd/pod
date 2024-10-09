@@ -15,3 +15,9 @@ Features include :
 6. Custom Profile page including all the details of the author
 
 ![podimg](https://github.com/user-attachments/assets/7ac39a11-8dd5-4cec-a8c5-9605062a245d)
+
+
+![podimgpt2](https://github.com/user-attachments/assets/9ffa649d-a200-48e8-919b-34a2e715286a)
+
+
+![podimgpt3](https://github.com/user-attachments/assets/e969a10a-a8a3-474e-a0ec-0260c5794940)
