@@ -14,4 +14,4 @@ Features include :
 5. Custom image generation/image upload
 6. Custom Profile page including all the details of the author
 
-(https://github.com/user-attachments/assets/9378ee8a-361a-4b20-b63b-ff566e48b95b)
+![podimg](https://github.com/user-attachments/assets/7ac39a11-8dd5-4cec-a8c5-9605062a245d)
